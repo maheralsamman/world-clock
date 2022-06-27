@@ -16,6 +16,12 @@ const Clock = ({ name, timezone }) => {
     return () => clearInterval(tictac);
   }, []);
 
+//   useEffect(() => {
+//    setTimeout(() => {
+//       setTime(getTime());
+//     }, 1000);
+//   }, [time]);
+
   return (
     <div className="board__clock">
       <p className="board__time">{time.toLocaleTimeString("en-US",{hour12:false})}</p>

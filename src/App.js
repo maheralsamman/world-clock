@@ -1,7 +1,11 @@
-import React from "react";
-import Board from "./components/Board";
+import React, { createContext } from "react";
+import Home from "./components/Home";
 
 import './App.css'
+
+// create context here or in another file
+
+export const LocationContext = createContext();
 
 function App() {
   const locations = [
@@ -41,7 +45,9 @@ function App() {
   return (
     <div className="App">
       <h1 className="title">World Clocks</h1>
-      <Board locations={locations}/>
+      <LocationContext.Provider value={locations}>
+        <Home />
+      </LocationContext.Provider>
     </div>
   );
 }

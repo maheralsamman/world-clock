@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import Clock from "./Clock";
 
-const Board = ({ locations }) => {
+import { LocationContext } from '../App';
+
+const Board = () => {
+    const locations = useContext(LocationContext)
     return (
         <div className="board">
             {locations.map(({ name, timezone }) => 
