@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Clock = ({ name, timezone }) => {
+const Clock = ({ name = "unknown city", timezone }) => {
   const getTime = () => {
     const currentTime = new Date();
     currentTime.setHours(currentTime.getHours() + timezone);
@@ -23,7 +23,7 @@ const Clock = ({ name, timezone }) => {
 //   }, [time]);
 
   return (
-    <div className="board__clock">
+    <div className="board__clock" data-testid="clock">
       <p className="board__time">{time.toLocaleTimeString("en-US",{hour12:false})}</p>
       <p className="board__location">{name}</p>
     </div>
